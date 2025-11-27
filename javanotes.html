@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Practice Notebook</title>
+  <!-- ========== JavaScript inside HEAD ========== -->
+  <script>
+    function greetFromHead() {
+      console.log("Hello! Script from HEAD executed.");
+    }
+  </script>
+
+  <!-- Link to External JavaScript file -->
+  <script src="external.js"></script>
+</head>
+
+<body onload="greetFromHead()">
+  <h2>JavaScript Application Development – Unit IV & V</h2>
+  <hr>
+
+  <!-- ========== Variables and Operators ========== -->
+  <script>
+    document.write("<h3>Variables and Operators</h3>");
+    var a = 10;
+    let b = 5;
+    const c = a + b;
+    document.write("a = " + a + ", b = " + b + ", a + b = " + c + "<br>");
+    document.write("Comparison (a > b): " + (a > b) + "<br>");
+    document.write("Logical AND (a>5 && b<10): " + (a>5 && b<10) + "<br>");
+  </script>
+
+  <!-- ========== Control Statements ========== -->
+  <script>
+    document.write("<h3>Control Statements</h3>");
+    let marks = 75;
+    if (marks >= 40) {
+      document.write("Pass<br>");
+    } else {
+      document.write("Fail<br>");
+    }
+
+    let day = 3;
+    switch (day) {
+      case 1: document.write("Monday<br>"); break;
+      case 2: document.write("Tuesday<br>"); break;
+      case 3: document.write("Wednesday<br>"); break;
+      default: document.write("Other day<br>");
+    }
+
+    for (let i = 1; i <= 5; i++) {
+      if (i == 3) continue;
+      document.write("Number: " + i + "<br>");
+    }
+  </script>
+
+  <!-- ========== Looping Statements ========== -->
+  <script>
+    document.write("<h3>Looping Statements</h3>");
+    let i = 1;
+    while (i <= 3) {
+      document.write("While Loop: " + i + "<br>");
+      i++;
+    }
+
+    let j = 1;
+    do {
+      document.write("Do-While Loop: " + j + "<br>");
+      j++;
+    } while (j <= 3);
+
+    for (let k = 1; k <= 3; k++) {
+      document.write("For Loop: " + k + "<br>");
+    }
+  </script>
+
+  <!-- ========== Popup Boxes ========== -->
+  <h3>Popup Boxes Demo</h3>
+  <button onclick="alert('This is an Alert!')">Alert</button>
+  <button onclick="confirmBox()">Confirm</button>
+  <button onclick="promptBox()">Prompt</button>
+
+  <script>
+    function confirmBox() {
+      if (confirm("Are you sure?")) alert("Confirmed!");
+      else alert("Cancelled!");
+    }
+    function promptBox() {
+      let name = prompt("Enter your name:");
+      alert("Hello, " + name);
+    }
+  </script>
+
+  <!-- ========== Objects, Properties & Methods ========== -->
+  <script>
+    document.write("<h3>JavaScript Object Example</h3>");
+    let person = {
+      name: "Harjit",
+      age: 30,
+      greet: function() { return "Hello " + this.name; }
+    };
+    document.write("Name: " + person.name + "<br>");
+    document.write("Greeting: " + person.greet() + "<br>");
+  </script>
+
+  <!-- ========== Functions ========== -->
+  <script>
+    document.write("<h3>Functions Example</h3>");
+    function add(x, y) { return x + y; }
+    document.write("Add(4,5) = " + add(4,5) + "<br>");
+  </script>
+
+  <!-- ========== Events ========== -->
+  <h3>Event Handling</h3>
+  <button onclick="mouseClick()">Mouse Click Event</button><br><br>
+  <input type="text" onkeyup="keyPress()" placeholder="Type something here"><br><br>
+
+  <form onsubmit="return validateForm()">
+    <label>Enter Name:</label>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function mouseClick() {
+      alert("Mouse Click Event Triggered!");
+    }
+
+    function keyPress() {
+      console.log("Key pressed in input box.");
+    }
+
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      if (name === "") {
+        alert("Name cannot be empty!");
+        return false;
+      }
+      alert("Form Submitted Successfully!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
